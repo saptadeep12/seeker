@@ -1,0 +1,23 @@
+"$schema" = "node_modules/wrangler/config-schema.json"
+name = "seeker-backend"
+main = "worker.py"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["python_workers"]
+
+[vars]
+MODEL = "qwen/qwen3.8-27b"
+MAX_CONTEXT_CHARS = 600
+REQUEST_TIMEOUT_S = 15
+RATE_LIMIT_PER_MIN = 30
+MAX_TOKENS = 300
+RESPONSE_FORMAT = "json_object"
+CACHE_TTL_S = 300
+CACHE_MAX_ENTRIES = 500
+RATE_LIMIT_PER_DAY = 500
+GLOBAL_RATE_LIMIT_PER_MIN = 100
+INSTALL_TOKEN_MIN_LENGTH = 8
+INSTALL_TOKEN_MAX_LENGTH = 128
+EXTENSION_ORIGIN = "chrome-extension://REPLACE_WITH_EXTENSION_ID"
+
+[secrets]
+required = ["GROQ_API_KEY"]

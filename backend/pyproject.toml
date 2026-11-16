@@ -1,0 +1,20 @@
+[project]
+name = "seeker-backend"
+version = "0.1.0"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "groq",
+    "pydantic",
+]
+
+[dependency-groups]
+dev = [
+    "workers-py",
+    "workers-runtime-sdk",
+]
+local = [
+    "uvicorn[standard]",
+    "pytest",
+    "httpx",
+]
